@@ -1,6 +1,6 @@
 #include "main.h"
  /**
-  *print_square - draws a square using '#' character
+  *print_square - prints n squares according to n nmber of times
   *
   *@size: size of the square
   *Return: Always 0 (Success)

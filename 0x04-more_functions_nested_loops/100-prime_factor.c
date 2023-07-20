@@ -9,17 +9,17 @@ int main(void)
 {
 	long x;
 	long num = 612852475143;
-	long max
+	long maxf;
 	double sq = sqrt(num);
 
 	for (x = 0; x <= sq; x++)
 	{
 		if (num % x == 0)
-			max = num / x;
+			maxf = num / x;
 
 
 	}
-	printf("%ld", max);
+	printf("%ld", maxf);
 
 	return (0);
 }
