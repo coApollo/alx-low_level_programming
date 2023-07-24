@@ -14,8 +14,13 @@ void print_array(int *a, int n)
 	for (n = 0; n < 5; n++)
 	{
 		if (n != 4)
-			printf("%d, ", a[n]);
+		{
+			printf("%d,", a[n]);
+			putchar(' ');
+		}
 		else
+		{
 			printf("%d\n", a[n]);
+		}
 	}
 }
