@@ -18,7 +18,6 @@ void print_all(const char * const format, ...)
 	while (format && format[i])
 	{
 		next = 1;
-
 		switch (format[i])
 		{
 		case 'c':
@@ -43,12 +42,10 @@ void print_all(const char * const format, ...)
 			next = 0;
 			break;
 		}
-
 		if (format[i + 1] && next)
 			printf(", ");
 		i++;
 	}
 	va_end(list);
 	printf("\n");
-
 }
