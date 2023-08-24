@@ -23,9 +23,28 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 	new_node->str = dup;
+	new_node->len = strlength(str);
 	new_node->next = *head;
 
 	*head = new_node;
 
 	return (*head);
+}
+/**
+  * strlength - Returns the length of a string
+  * @str: String
+  *
+  * Return: String length
+  */
+int strlength(const char *str)
+{
+	int ch = 0;
+
+	while (*str)
+	{
+		str++;
+		ch++;
+	}
+
+	return (ch);
 }
