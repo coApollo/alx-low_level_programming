@@ -1,36 +1,18 @@
-section .data
-    hello db "Hello, Holberton", 0
-    format db "%s", 0
-    newline db 10, 0
+section .rodata
+    msg: db "Hello, Holberton", 10
+    msglen: equ $ - msg
 
 section .text
-    extern printf
+    global main
 
-global main
 main:
-    ; Push the format string and hello string onto the stack
-    push format
-    push hello
+    mov rax, 1      ; Set the system call number for write
+    mov rdi, 1      ; Set the file descriptor for stdout
+    mov rsi, msg    ; Set the address of the message string
+    mov rdx, msglen ; Set the length of the message string
+    syscall         ; Call the write system call
 
-    ; Call printf
-    mov rdi, format
-    mov rsi, hello
-    xor rax, rax
-    call printf
-
-    ; Push the newline string onto the stack
-    push newline
-
-    ; Call printf to print the newline
-    mov rdi, format
-    mov rsi, rsp
-    xor rax, rax
-    call printf
-
-    ; Clean up the stack
-    add rsp, 16
-
-    ; Exit the program
-    xor eax, eax
-    ret
+    mov rax, 60     ; Set the system call number for exit
+    mov rdi, 0      ; Set the exit status
+    syscall         ; Call the exit system call
 
