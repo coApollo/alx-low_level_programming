@@ -6,24 +6,27 @@
  *
  *@a:pointer to first value of an array
  *@size: size of array
- *Return: Always 0 (Success)
+ *Return: Nothing
  */
 void print_diagsums(int *a, int size)
 {
-	int i;
-	int j;
-	int sum = 0;
+	int i, j;
+	long int diag1 = 0;
+	long int diag2 = 0;
 
 	for (i = 0; i < size; i++)
 	{
 		for (j = 0; j < size; j++)
 		{
-			if (i == j)
-				sum = sum + a[i][j];
+			if (j == i)
+			{
+				diag1 += a[(i * size) + j];
+			}
+			if (i == size - j - 1)
+			{
+				diag2 += a[(i * size) + j];
+			}
 		}
-
-
 	}
-	printf("%d", sum);
-
+	printf("%ld, %ld\n", diag1, diag2);
 }
