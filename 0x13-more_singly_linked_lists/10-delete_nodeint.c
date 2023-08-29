@@ -6,8 +6,8 @@
  *
  *@head: the head of the list
  *@index: the index of the node to delete
- *Return:1 if successful, 
- *	:-1 otherwise
+ *Return:1 if successful
+ *	:1 otherwise
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
