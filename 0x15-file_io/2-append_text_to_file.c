@@ -14,13 +14,15 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (filename == NULL)
 		return (-1);
 
-	fp = open("filename", O_WRONLY | O_APPEND);
+	fp = open(filename, O_WRONLY | O_APPEND);
 	if (fp < 0)
 		return (-1);
 
 	filewrite = write(fp, text_content, _strlen(text_content));
-	if (filewrite == -1)
+	if (filewrite < 0 || fp < 0)
 		return (-1);
+
+	close(fp);
 
 	return (1);
 }
