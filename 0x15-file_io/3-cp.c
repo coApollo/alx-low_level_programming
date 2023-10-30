@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
  *_alloc_ - allocates memory to a buffer and
  *prints error if it fails
  *
- *@file: pointer to the file
+ *@fd: pointer to the file
  *Return: A pointer to the newly-allocated memory location
  */
 char *_alloc_(char *fd)
@@ -78,7 +78,7 @@ char *_alloc_(char *fd)
 
 
 /**
- *_close_file - Close file || prrints error if
+ *_close_ - Close file || prrints error if
  *	it doesn't close
  *
  *@fd: The file to be closed.
