@@ -2,10 +2,10 @@
 /**
  *create_file - creates a file
  *
- *@filename: name of the file to be created
+ *@filename: the name of the file to be created
  *@text_content: string to write on the file
  *Return: 1 one success
- *	: -1 if it fails
+ *	:-1 if it fails
  */
 int create_file(const char *filename, char *text_content)
 {
